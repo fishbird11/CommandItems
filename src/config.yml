@@ -1,0 +1,55 @@
+# CommandItems by FishbirdDD
+
+# Commands:
+# /commanditems give {player} {item} {amount} - Give an item to a player
+# /commanditems iteminfo - Gives you the material, name, and lore of an item in your hand
+# /commanditems reload - Reloads the config file
+
+# Permissions
+# commanditems.give
+# commanditems.iteminfo
+# commanditems.reload
+
+# This is where you can set the plugin's messages
+messages:
+  # This message will be sent if a player uses a command wrong.
+  # The variable {usage} will be replaced with the correct way to use the command.
+  usage: "&4Error: &cUsage - {usage}"
+  # This message will be sent if an amount entered is not a number
+  incorrectnumber: "&4Error: &cThe amount you entered is not a number"
+  # This message will be sent if a player entered is not online
+  incorrectplayer: "&4Error: &cThat player is not online"
+  # This message will be sent if an item entered is not a defined item
+  incorrectitem: "&4Error: &cThat item is not defined in the config"
+  # This message will be sent when a player is given an item
+  # You may use the {player}, {item}, and {amount} variables here
+  give: "&aYou have given {player} {amount} of {item}"
+  # This message will be sent when a player does not have permission to do a command
+  permissionerror: "&4Error: &cYou do not have permission to run that command"
+  # This message will be sent when a player types /commanditems
+  helpmenu: |2
+    /commanditems give {player} {item} {amount} - Give an item to a player
+    /commanditems iteminfo - Gives you the material, name, and lore of an item in your hand
+    /commanditems reload - Reloads the config file
+
+# Here you can define items that will run the command. 
+# You can use /commanditems iteminfo to get the item, name, and lore of an item
+
+# IMPORTANT: Any item that is the same block, has the same name, and has the same lore of
+# an item in this config WILL execute the command you set up. Because of this, it is best
+# if your items have either a colored name or a custom lore.
+
+items:
+  # This name can be set to whatever you want
+  money1000:
+    item: PAPER
+    name: "&6$1000"
+    # Whether or not the item will be taken from the player when the command is executed
+    redeemable: true
+    # If you don't want to have a lore, make it "lore: []"
+    lore:
+      - "&eThis will give you &6$1000"
+    # This is where you specify what commands will be run when a player clicks
+    # the item. You can use the {player} variable or PlaceholderAPI in this section.
+    commands:
+      - "eco give {player} 1000"

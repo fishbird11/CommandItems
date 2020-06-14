@@ -1,0 +1,22 @@
+name: CommandItems
+author: FishbirdDD
+version: 1.2.0
+main: org.fishbits.commanditems.Main
+api-version: 1.14
+softdepend: [PlaceholderAPI]
+
+commands:
+  commanditems:
+    description: Main plugin command
+
+permissions:
+  commanditems.command:
+    description: Use the main command
+  commanditems.reload:
+    description: Reload the plugin
+  commanditems.give:
+    description: Give command items 
+  commanditems.iteminfo:
+    description: Use the /commanditems iteminfo command
+  commanditems.list:
+    description: List all command items
